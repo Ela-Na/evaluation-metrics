@@ -1,0 +1,37 @@
+"""
+Created on Tue Nov  3 20:01:26 2020
+
+@author: Ela
+"""
+
+def mulab_hammloss(y_true, y_pred):
+    
+    indic_values = 0
+    indic = 0
+    
+    
+    for i in range(len(y_true)):
+        
+        for j in range(len(y_true[i])):
+        
+            
+            if y_true[i][j] != y_pred[i][j]:
+                
+                indic += 1
+                
+            else:
+                indic += 0
+                
+                
+            indic_values = (indic/len(y_true[i]))/len(y_true)
+         
+                        
+    return indic_values
+    
+    
+y_true = [[1,0,1,0], [1,1,0,0], [0,1,1,0], [0,0,1,0], [1,0,1,0]]
+y_pred = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,0,1,0], [1,0,1,1]]
+
+
+
+print(mulab_hammloss(y_true, y_pred))
