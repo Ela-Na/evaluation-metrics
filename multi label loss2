@@ -1,0 +1,38 @@
+"""
+Created on Tue Nov  3 19:22:39 2020
+
+@author: Ela
+"""
+
+def mulab_loss(y_true, y_pred):
+    
+    indic_values = []
+    indic = 0
+    #indic_values = []
+    
+    for i in range(len(y_true)):
+        
+            #indic = [1 if y_true[i] == y_pred[i] else 0]
+            
+        if y_true[i] != y_pred[i]:
+                
+            indic += 1
+                
+        else:
+            indic += 0
+                
+        print(indic)
+                
+    indic_values.append(indic/len(y_true))
+            
+            
+            
+            #indic_values.append(indic)
+                        
+    return sum(indic_values)
+    
+    
+y_true = [[1,0,1,0], [1,1,0,0], [0,1,1,0], [0,0,1,0], [1,0,1,0]]
+y_pred = [[1,1,1,0], [1,1,0,0], [0,1,0,0], [0,0,1,0], [1,0,1,1]]
+
+print(mulab_loss(y_true, y_pred))
